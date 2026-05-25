@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Quiz.js</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <nav>
+      <h1>Quiz.js</h1>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 448 512"
+        height="24px"
+        width="24px"
+      >
+        <path
+          fill="rgb(0, 0, 0)"
+          d="M224 248a120 120 0 1 0 0-240 120 120 0 1 0 0 240zm-29.7 56C95.8 304 16 383.8 16 482.3 16 498.7 29.3 512 45.7 512l356.6 0c16.4 0 29.7-13.3 29.7-29.7 0-98.5-79.8-178.3-178.3-178.3l-59.4 0z"
+        />
+      </svg>
+    </nav>
+    <header>
+      <p><span>INTRODUCTION TO JS</span></p>
+      <h2>Do you know JS? Find out!</h2>
+    </header>
+
+    <main>
+      <div class="question-container">
+        <div id="statement"></div>
+
+        <div id="options">
+          <button name="true" value="true">
+            true <input type="radio" name="true-dot" id="" />
+          </button>
+          <button name="false" value="false">
+            false
+            <input type="radio" name="false-dot" id="" />
+          </button>
+        </div>
+
+        <div id="explanation"></div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="con-text-footer" id="restart">
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+            heigth="14px"
+            width="14px"
+          >
+            <path
+              fill="rgb(80, 80, 80)"
+              d="M436.7 74.7L448 85.4 448 32c0-17.7 14.3-32 32-32s32 14.3 32 32l0 128c0 17.7-14.3 32-32 32l-128 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l47.9 0-7.6-7.2c-.2-.2-.4-.4-.6-.6-75-75-196.5-75-271.5 0s-75 196.5 0 271.5 196.5 75 271.5 0c8.2-8.2 15.5-16.9 21.9-26.1 10.1-14.5 30.1-18 44.6-7.9s18 30.1 7.9 44.6c-8.5 12.2-18.2 23.8-29.1 34.7-100 100-262.1 100-362 0S-25 175 75 75c99.9-99.9 261.7-100 361.7-.3z"
+            />
+          </svg>
+        </div>
+        <div class="restart">Restart</div>
+      </div>
+      <div class="con-text-footer">
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+            height="14px"
+            width="14px"
+          >
+            <path
+              fill="rgb(80, 80, 80)"
+              d="M160 96c17.7 0 32-14.3 32-32s-14.3-32-32-32L96 32C43 32 0 75 0 128L0 384c0 53 43 96 96 96l64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32l64 0zM502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 192 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z"
+            />
+          </svg>
+        </div>
+        <div class="restart">Exit</div>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
