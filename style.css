@@ -39,6 +39,7 @@ span {
 }
 
 #statement {
+  text-align: center;
   margin-block: 0.5em;
   padding-block: 9px;
 }
@@ -49,26 +50,31 @@ span {
   justify-content: center;
   gap: 1em;
 }
-#options button {
+.btn {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 12px 18px;
-  font-size: 17px;
-  border: 1px solid #dbd8e4;
+  font-size: 16.5px;
+  font-weight: bold;
+  color: #2f2ebe;
+  border: 1px solid #2f2ebe;
   border-radius: 0.5em;
   background: transparent;
 }
 
+#options button:hover {
+  cursor: pointer;
+}
 footer {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: #dbd8e4;
+  background-color: #ffffff;
   position: fixed;
   width: 100%;
   bottom: 0;
-  height: 8vh;
+  height: 10vh;
   font-weight: bold;
   color: #505050;
 }
@@ -80,6 +86,23 @@ footer {
 .con-text-footer:hover {
   cursor: pointer;
   font-size: 14.5px;
+}
+
+.footer-text button {
+  border: none;
+  background-color: transparent;
+  color: #505050;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.correct {
+  border: 1px solid lightgreen;
+  color: lightgreen;
+}
+.incorrect {
+  border: 1px solid lightpink;
+  color: lightpink;
 }
 /* body {
   margin: 1rem auto;

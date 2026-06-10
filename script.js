@@ -1,74 +1,77 @@
-// TODO 1: Declare & assign variables pointing to the corresponding element(s)
-// statement should be the "statement" div
-// optionButtons should be all the elements within the "options" div
-// explanation should be the "explanation" div
+const statement = document.querySelector("#statement");
+const optionButtons = document.querySelector("#options").children;
+const explanation = document.querySelector("#explanation");
+const exit = document.querySelector("#exit").children;
+const restart = document.querySelector("#restart").children;
 
-let statement = document.querySelector("#statement");
-let optionButtons = document.querySelectorAll("#options button");
-let explanation = document.querySelector("#explanation");
-
-let restartButton = document.querySelector("#restart");
-
-restartButton.addEventListener("click", () => {
+restart[0].addEventListener("click", () => {
   location.reload();
 });
 
-// TODO 2: Declare & assign a variable called fact
-// Its value should be an object with a statement, true/false answer, and explanation
+const fact = [
+  {
+    statement:
+      "JavaScript is a programming language that is commonly used to create interactive effects within web browsers?",
+    answer: "True",
+    explanation:
+      "JavaScript is indeed a programming language that allows developers to create dynamic and interactive web content. It is widely used for client-side scripting in web development.",
+  },
+  {
+    statement: "JavaScript is a statically typed programming language.",
+    answer: "False",
+    explanation:
+      "JavaScript is a dynamically typed programming language, which means that variable types are determined at runtime rather than compile time.",
+  },
+  {
+    statement:
+      "JavaScript can be used for both front-end and back-end development.",
+    answer: "True",
+    explanation:
+      "JavaScript can be used for front-end development (client-side) to create interactive web pages, as well as for back-end development (server-side) using environments like Node.js.",
+  },
+  {
+    statement: "JavaScript was created in 1995 by Brendan Eich.",
+    answer: "True",
+    explanation:
+      "JavaScript was indeed created in 1995 by Brendan Eich while he was working at Netscape Communications Corporation. It was initially developed in just 10 days and has since become one of the most popular programming languages in the world.",
+  },
+];
 
-// TODO 3: Set the text of the statement element to the fact's statement
-
-const facts = {
-  statement: "Is JavaScript the same as Java?",
-  answer: "false",
-  explanation:
-    "JavaScript was formly called ECMAscript but for marketing and publicity purposed the name was changed to JavaScript because at that time the programming language 'Java' was popular at that time.",
+const disable = (buttons) => {
+  buttons.setAttribute("disabled", "");
+};
+const enable = (buttons) => {
+  buttons.removeAttribute("disabled");
 };
 
-statement.textContent = facts.statement;
+statement.textContent = fact[0].statement;
 
-// TODO 4: Declare disable & enable functions to set or remove the "disabled" attribute from a given button element
-// disable(button) should set the button element's attribute "disabled" to the value ""
-// enable(button) should remove the attribute "disabled" from the button element
+let i = 0;
 
-const disable = (anwserButton) => anwserButton.setAttribute("disabled", "");
-// What's the empty string for?
-const enable = (answerButton) => answerButton.removeAttribute("disabled");
-
-// TODO 5: Declare an isCorrect function that compares a guess to the right answer
-// isCorrect(guess) should return true if the guess matches the fact's answer
 const isCorrect = (guess) => {
-  if (guess === facts.answer) {
+  if (guess === fact[i].answer) {
     return true;
   } else {
     return false;
   }
 };
 
-// Please explain the isCorrect function.
+for (let i = 0; i < optionButtons.length; i++) {
+  optionButtons[i].addEventListener("click", () => {
+    explanation.textContent = fact[i].explanation;
+    for (let i = 0; i < optionButtons.length; i++) {
+      disable(optionButtons[i]);
+
+      const guessed = optionButtons[i].value;
+
+      if (isCorrect(guessed)) {
+        optionButtons[i].classList.add("correct");
+      } else {
+        optionButtons[i].classList.add("incorrect");
+      }
+    }
+  });
+}
 
 // TODO 6A: Use a for loop to add a click event listener to each of the optionButtons
 // TODO 6B: Within the event handler function, display the fact's explanation by setting the text of the explanation element
-
-// TODO 7: Within the event handler function,
-// Use a for loop to disable all the option buttons
-
-for (let handler = 0; handler < optionButtons.length; handler++) {
-  if (handler === 0) {
-    optionButtons[handler].addEventListener("click", () => {
-      optionButtons[handler].textContent = "clicked true";
-      disable(optionButtons[handler == 0 ? 1 : 0]);
-    });
-  } else if (handler >= 1) {
-    optionButtons[handler].addEventListener("click", () => {
-      optionButtons[handler].textContent = "clicked false";
-      explanation.textContent = facts.explanation;
-      disable(optionButtons[handler == 0 ? 1 : 0]);
-    });
-  }
-}
-
-// TODO 8: Within the event handler function,
-// Get the guessed value from the clicked button
-// Use a conditional to compare the guess to the fact's answer
-// and add the "correct"/"incorrect" class as appropriate

@@ -37,13 +37,8 @@
         <div id="statement"></div>
 
         <div id="options">
-          <button name="true" value="true">
-            true <input type="radio" name="true-dot" id="" />
-          </button>
-          <button name="false" value="false">
-            false
-            <input type="radio" name="false-dot" id="" />
-          </button>
+          <button name="true" value="true" class="btn">true</button>
+          <button name="false" value="false" class="btn">false</button>
         </div>
 
         <div id="explanation"></div>
@@ -65,7 +60,9 @@
             />
           </svg>
         </div>
-        <div class="restart">Restart</div>
+        <div class="footer-text" id="restart">
+          <button>Restart</button>
+        </div>
       </div>
       <div class="con-text-footer">
         <div>
@@ -81,7 +78,9 @@
             />
           </svg>
         </div>
-        <div class="restart">Exit</div>
+        <div class="footer-text" id="exit">
+          <button>EXIT</button>
+        </div>
       </div>
     </footer>
     <script src="script.js"></script>
